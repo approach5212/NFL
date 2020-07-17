@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+  <mapper namespace="quarterback">
+  	<!-- quarterback 테이블의 데이터를 전부 가져오는 SQL -->
+  	<select id="allquarterback"
+  			resultType="kr.co.nfl.quarterback.domain.Quarterback">
+  			select player_id, position_name, team_name, passyds, att, cmp, cmpper, 
+  			td, intercept, rate, firstdown, firstdownper, twentyyardpasses, 
+  			fourtyyardpasses, longestpass, sack 
+  			from player_quarterback	
+  	</select>
+  	
+  	<!-- quarterback 테이블에서 데이터 1개를 가져오는 SQL -->
+  	<select id="detailquarterback"
+  			parameterType="java.lang.Integer"
+  			resultType="kr.co.nfl.quarterback.domain.Quarterback">
+  			
+  			select player_id, position_name, team_name, passyds, att, cmp, cmpper, 
+  			td, intercept, rate, firstdown, firstdownper, twentyyardpasses, 
+  			fourtyyardpasses, longestpass, sack 
+  			from player_quarterback 
+  			where player_id = #{player_id}  			
+  	</select>
+  </mapper>
+  
+  
+  
+  
+  
+  

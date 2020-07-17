@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="kr.co.nfl.quarterback.domain">
+	<class name="Quarterback" table="player_quarterback">
+		<id name="player_id" column="player_id" />
+		<property name="position_name" column="position_name"/>
+		<property name="team_name" column="team_name"/>
+		<property name="passyds" column="passyds"/>
+		<!-- 나중에 채워넣 -->
+	</class>
+</hibernate-mapping>
