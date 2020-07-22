@@ -2,32 +2,30 @@
 <!DOCTYPE mapper
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-
+	<!-- 이 파일은 MyBatis를 사용할때 작성하며 테이블의 SQL구문을 저장하는 파일이다. -->	
+	<!--XML에서 크다는 &gt; 이고 작다는 &lt; 이렇게 쓴다. -->
   <mapper namespace="quarterback">
   	<!-- quarterback 테이블의 데이터를 전부 가져오는 SQL -->
   	<select id="allquarterback"
   			resultType="kr.co.nfl.quarterback.domain.Quarterback">
-  			select player_id, position_name, team_name, passyds, att, cmp, cmpper, 
+  			select player_name, position_name, team_name, passyds, att, cmp, cmpper, 
   			td, intercept, rate, firstdown, firstdownper, twentyyardpasses, 
   			fourtyyardpasses, longestpass, sack 
   			from player_quarterback	
   	</select>
   	
-  	<!-- quarterback 테이블에서 데이터 1개를 가져오는 SQL -->
+  	<!-- quarterback 테이블에서 데이터 1개를 가져오는 SQL : 상세보기-->
+  	<!-- 파라미터타입은 기본키의 자료형이다 -->
   	<select id="detailquarterback"
-  			parameterType="java.lang.Integer"
+  			parameterType="java.lang.String" 
   			resultType="kr.co.nfl.quarterback.domain.Quarterback">
   			
-  			select player_id, position_name, team_name, passyds, att, cmp, cmpper, 
+  			select player_name, position_name, team_name, passyds, att, cmp, cmpper, 
   			td, intercept, rate, firstdown, firstdownper, twentyyardpasses, 
   			fourtyyardpasses, longestpass, sack 
   			from player_quarterback 
-  			where player_id = #{player_id}  			
+  			where player_name = #{player_name}  			
   	</select>
   </mapper>
-  
-  
-  
-  
   
   

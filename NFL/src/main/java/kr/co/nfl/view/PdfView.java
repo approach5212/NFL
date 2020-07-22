@@ -106,7 +106,7 @@ public class PdfView extends AbstractPdfView {
 		
 		//데이터 출력
 		for(Quarterback quarterback : list) {
-			Cell imsi = new Cell(new Paragraph(quarterback.getPlayer_id().toString(), font));
+			Cell imsi = new Cell(new Paragraph(quarterback.getPlayer_name(), font));
 			table.addCell(imsi);
 			
 			imsi = new Cell(new Paragraph(quarterback.getPosition_name(), font));

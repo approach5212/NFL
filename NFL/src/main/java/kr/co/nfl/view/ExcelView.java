@@ -57,7 +57,7 @@ public class ExcelView extends AbstractXlsView {
 			Row row = sheet.createRow(rowNum++);
 			//셀을 생성해서 출력
 			Cell c = row.createCell(0);
-			c.setCellValue(quarterback.getPlayer_id());
+			c.setCellValue(quarterback.getPlayer_name());
 			
 			c = row.createCell(1);
 			c.setCellValue(quarterback.getPosition_name());

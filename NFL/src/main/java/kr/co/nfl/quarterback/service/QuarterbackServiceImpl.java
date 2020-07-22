@@ -24,7 +24,7 @@ public class QuarterbackServiceImpl implements QuarterbackService {
 	//private QuarterbackMapper quarterbackDao;
 
 	@Override
-	@Transactional
+	//@Transactional - 이 주석은 하이버네이트 쓸꺼면 주석 해제
 	public void allquarterback(HttpServletRequest request, HttpServletResponse response) {
 		//1.파라미터 읽기
 		
@@ -37,21 +37,21 @@ public class QuarterbackServiceImpl implements QuarterbackService {
 		//5.결과를 가공
 		
 		//6.결과를 저장 - REST API Server의 경우는 request에 저장
-		request.setAttribute("list", list);		
+		request.setAttribute("list", list);
 		
 	}
 
 	@Override
-	@Transactional
+	//@Transactional - 이 줄도 하이버네이트 쓸거면 주석 해제
 	public void detailquarterback(HttpServletRequest request, HttpServletResponse response) {
 		//요청 주소의 마지막 부분을 가져오기
-		//localhost/detail/player_id
+		//localhost/detail/player_name
 		String requestURI = request.getRequestURI();
 		String [] ar = requestURI.split("/");
-		String player_id = ar[ar.length-1];
+		String player_name = ar[ar.length-1];
 		
 		//DAO의 메소드를 호출
-		Quarterback quarterback = quarterbackDao.detailquarterback(Integer.parseInt(player_id));
+		Quarterback quarterback = quarterbackDao.detailquarterback(player_name);
 		//결과를 저장
 		request.setAttribute("quarterback", quarterback);
 	}

@@ -6,12 +6,12 @@ import javax.xml.bind.annotation.XmlType;
 
 @XmlAccessorType(XmlAccessType.FIELD)
 //출력할 속성과 순서를 설정
-@XmlType(name = "", propOrder= {"player_id", "position_name", "team_name", "passyds", "att", 
+@XmlType(name = "", propOrder= {"player_name", "position_name", "team_name", "passyds", "att", 
 		"cmp", "cmpper", "td", "intercept", "rate", "firstdown", "firstdownper", "twentyyardpasses", 
 		"fourtyyardpasses", "longestpass", "sack"})
 public class Quarterback {
 	//숫자 데이터의 경우 null 이 될 가능성이 있는 경우는 Wrapper 클래스 사용
-	private Integer player_id;
+	private String player_name;
 	private String position_name;
 	private String team_name;
 	private Integer passyds;
@@ -28,11 +28,11 @@ public class Quarterback {
 	private Integer longestpass;
 	private Integer sack;
 	
-	public Integer getPlayer_id() {
-		return player_id;
+	public String getPlayer_name() {
+		return player_name;
 	}
-	public void setPlayer_id(Integer player_id) {
-		this.player_id = player_id;
+	public void setPlayer_name(String player_name) {
+		this.player_name = player_name;
 	}
 	public String getPosition_name() {
 		return position_name;
@@ -126,7 +126,7 @@ public class Quarterback {
 	}
 	@Override
 	public String toString() {
-		return "Quarterback [player_id=" + player_id + ", position_name=" + position_name + ", team_name=" + team_name
+		return "Quarterback [player_name=" + player_name + ", position_name=" + position_name + ", team_name=" + team_name
 				+ ", passyds=" + passyds + ", att=" + att + ", cmp=" + cmp + ", cmpper=" + cmpper + ", td=" + td
 				+ ", intercept=" + intercept + ", rate=" + rate + ", firstdown=" + firstdown + ", firstdownper="
 				+ firstdownper + ", twentyyardpasses=" + twentyyardpasses + ", fourtyyardpasses=" + fourtyyardpasses
